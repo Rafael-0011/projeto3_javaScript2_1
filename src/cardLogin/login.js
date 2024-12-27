@@ -14,14 +14,11 @@ export async function login() {
       alert("Username ou senha não podem estar vazios.");
       return;
     }
-    console.log(user);
-    console.log(pass);
 
     const dados = await userLogin(user, pass);
 
     if (dados) {
       localStorage.setItem("token", dados);
-      console.log("Token armazenado:", dados);
       window.location.href = "card.html";
     } else {
       alert("nome ou senha errado");
